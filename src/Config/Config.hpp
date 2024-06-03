@@ -3,9 +3,16 @@
 #include <assert.h>
 #include "../reservation_station/ReservationStation.hpp"
 
+#ifndef REGISTER_HPP
+#include "../Register/Register.hpp"
+#endif
+
 #ifndef TYPES_H
 #include "../types.hpp"
 #endif
+
+#ifndef CONFIG_HPP
+#define CONFIG_HPP
 
 class c_Config{
     private:
@@ -14,26 +21,20 @@ class c_Config{
         int m_MultiplyReservationStations = 0;
         int m_LoadBuffer = 0;
         int m_StoreBuffer = 0;
-        // Assuming 1 ADD unit, 1 MUL unit and 1 LOAD/STORE unit
-        c_ReservationStation** m_AddReservationStationsList;
-        c_ReservationStation** m_MultiplyReservationStationsList;
-        c_ReservationStation** m_LoadBufferList;
-        c_ReservationStation** m_StoreBufferList;
     public:
         c_Config(int, int, int, int, int);
         ~c_Config();
-        void f_SetNumberOfRegisters(int);
-        void f_SetAddReservationStations(int);
-        void f_SetMultiplyReservationStations(int);
-        void f_SetLoadBuffer(int);
-        void f_SetStoreBuffer(int);
-        int f_GetNumberOfRegisters();
-        int f_GetAddReservationStations();
-        int f_GetMultiplyReservationStations();
-        int f_GetLoadBuffer();
-        int f_GetStoreBuffer();
-        c_ReservationStation** f_GetAddReservationStationsList();
-        c_ReservationStation** f_GetMultiplyReservationStationsList();
-        c_ReservationStation** f_GetLoadBufferList();
-        c_ReservationStation** f_GetStoreBufferList();
+        c_Register **m_RegisterList;
+        // Assuming 1 ADD unit, 1 MUL unit and 1 LOAD/STORE unit
+        c_ReservationStation **m_AddReservationStationsList;
+        c_ReservationStation **m_MultiplyReservationStationsList;
+        c_ReservationStation **m_LoadBufferList;
+        c_ReservationStation **m_StoreBufferList;
+        int getRegisters();
+        int getAddReservationStations();
+        int getMultiplyReservationStations();
+        int getLoadBuffer();
+        int getStoreBuffer();
 };
+
+#endif // CONFIG_HPP

@@ -2,18 +2,25 @@
 #include <stdio.h>
 #include <assert.h>
 
+#ifndef TYPES_H
 #include "../types.hpp"
+#endif
+
+#ifndef REGISTER_HPP
+#define REGISTER_HPP
 
 class c_Register{
     public:
+        static int m_Count;
+        c_Register();
+        int m_RegisterNumber;
         void f_SetValue(int);
-        void f_SetStatus(t_RegisterStatus);
         void f_SetWrittingUnit(int);
         float f_GetValue();
-        t_RegisterStatus f_GetStatus();
         int f_GetWrittingUnit();
     private:
         float m_Value = 0;
-        t_RegisterStatus m_Status = E_RS_READY;
-        int m_WrittingUnit = -1;
+        int m_Qi = 0;
 };
+
+#endif // REGISTER_HPP

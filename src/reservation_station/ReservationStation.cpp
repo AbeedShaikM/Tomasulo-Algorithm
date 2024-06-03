@@ -1,57 +1,25 @@
 #include "./ReservationStation.hpp"
 
+int c_ReservationStation::m_Count = 0;
+
 c_ReservationStation::c_ReservationStation(t_ReserveStationType p_ReserveStationType){
+    m_ReserveStationIndex = ++m_Count;
     m_ReserveStationType = p_ReserveStationType;
 }
 
 c_ReservationStation::~c_ReservationStation(){
+    delete m_Instruction;
 }
 
-void c_ReservationStation::f_SetBusy(bool p_Busy){
-    m_Busy = p_Busy;
-}
-
-void c_ReservationStation::f_SetInstructionType(t_InstructionType p_InstructionType){
-    m_InstructionType = p_InstructionType;
-}
-
-void c_ReservationStation::f_SetVj(int p_Vj){
-    m_Vj = p_Vj;
-}
-
-void c_ReservationStation::f_SetVk(int p_Vk){
-    m_Vk = p_Vk;
-}
-
-void c_ReservationStation::f_SetQj(int p_Qj){
-    m_Qj = p_Qj;
-}
-
-void c_ReservationStation::f_SetQk(int p_Qk){
-    m_Qk = p_Qk;
-}
-
-void c_ReservationStation::f_SetA(int p_A){
-    m_A = p_A;
-}
-
-t_ReserveStationType c_ReservationStation::f_GetReserveStationType(){
-    return m_ReserveStationType;
-}
-
-t_InstructionType c_ReservationStation::f_GetInstructionType(){
-    return m_InstructionType;
-}
-
-bool c_ReservationStation::f_GetBusy(){
+bool c_ReservationStation::f_GetStatus(){
     return m_Busy;
 }
 
-int c_ReservationStation::f_GetVj(){
+int c_ReservationStation::f_GetVJ(){
     return m_Vj;
 }
 
-int c_ReservationStation::f_GetVk(){
+int c_ReservationStation::f_GetVK(){
     return m_Vk;
 }
 
@@ -63,7 +31,41 @@ int c_ReservationStation::f_GetQk(){
     return m_Qk;
 }
 
-int c_ReservationStation::f_GetA(){
-    return m_A;
+int c_ReservationStation::f_GetImm(){
+    return m_Imm;
 }
+
+void c_ReservationStation::init(c_Instruction *p_Instruction)
+{
+    m_Instruction = p_Instruction;
+    p_Instruction->m_ReserveStationIndex = m_ReserveStationIndex;
+    m_Busy = true;
+}
+
+
+void c_ReservationStation::f_SetStatus(bool p_Status){
+    m_Busy = p_Status;
+}
+
+void c_ReservationStation::f_SetQJ(int p_Qj){
+    m_Qj = p_Qj;
+}
+
+void c_ReservationStation::f_SetQK(int p_Qk){
+    m_Qk = p_Qk;
+}
+
+c_Instruction* c_ReservationStation::f_GetInstruction(){
+    return m_Instruction;
+}
+
+void c_ReservationStation::f_SetVJ(int p_Vj){
+    m_Vj = p_Vj;
+}
+
+void c_ReservationStation::f_SetVK(int p_Vk){
+    m_Vk = p_Vk;
+}
+
+// Path: src/reservation_station/ReservationStation.hpp
 
