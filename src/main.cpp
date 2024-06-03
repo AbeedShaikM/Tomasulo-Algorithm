@@ -1,4 +1,4 @@
-#include "./Shader/Shader.hpp"
+#include "./Scheduler/Scheduler.hpp"
 
 int main(){
     c_Scheduler Scheduler(10, 3, 3, 2, 2);

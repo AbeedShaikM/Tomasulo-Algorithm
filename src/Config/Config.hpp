@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <assert.h>
-#include "../reservation_station/ReservationStation.hpp"
+#include "../Reservation_station/ReservationStation.hpp"
 
 #ifndef REGISTER_HPP
 #include "../Register/Register.hpp"

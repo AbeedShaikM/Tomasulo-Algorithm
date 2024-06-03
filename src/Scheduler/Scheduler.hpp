@@ -8,7 +8,7 @@
 #endif
 
 #ifndef ReservationStation_HPP
-#include "../reservation_station/ReservationStation.hpp"
+#include "../Reservation_station/ReservationStation.hpp"
 #endif
 
 #ifndef Instruction_HPP
