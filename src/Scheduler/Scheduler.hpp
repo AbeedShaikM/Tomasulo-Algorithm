@@ -33,7 +33,7 @@ class c_Scheduler{
         void f_Issue();
         void f_FreeUnit(c_UNIT*);
         bool f_ReserveStation(c_ReservationStation *, c_Instruction *);
-        void f_OperandUpdate(c_ReservationStation *, int, int);
+        void f_OperandUpdate(c_ReservationStation *);
         bool f_AllocateUnit(c_ReservationStation*, c_UNIT*);
         void f_FreeReservationStation(c_ReservationStation*);
         void f_WriteBackToReserverStation(c_ReservationStation*, int);
@@ -44,6 +44,8 @@ class c_Scheduler{
         void f_Cycle();
         c_UNIT* m_Adder;
         c_UNIT* m_Multiplier;
+        c_UNIT* m_AGU;
+        c_UNIT* m_LoadUnit;
         c_Scheduler(int, int, int, int, int);
         ~c_Scheduler();
         void f_AddInstruction(c_Instruction*);

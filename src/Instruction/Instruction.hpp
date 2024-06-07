@@ -29,6 +29,7 @@ class c_Instruction{
         int f_GetSourceRegister1();
         int m_InstructionIndex = 0;
         int m_ReserveStationIndex = 0;
+        bool m_IsImmReady = false;
     protected:
         int m_DestinationRegister = 0;
         int m_SourceRegister1 = 0;

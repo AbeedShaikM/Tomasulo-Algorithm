@@ -3,9 +3,12 @@
 int main(){
     c_Scheduler Scheduler(10, 3, 3, 2, 2);
 
-    Scheduler.f_AddInstruction(new c_RInstruction(t_InstructionType::E_IT_ADD, 1, 2, 3));
-    Scheduler.f_AddInstruction(new c_RInstruction(t_InstructionType::E_IT_MUL, 4, 1, 6));
-    Scheduler.f_AddInstruction(new c_RInstruction(t_InstructionType::E_IT_ADD, 5, 1, 7));
+    Scheduler.f_AddInstruction(new c_RInstruction(t_InstructionType::E_IT_LOAD, 6, 3, 34));
+    Scheduler.f_AddInstruction(new c_RInstruction(t_InstructionType::E_IT_LOAD, 2, 5, 45));
+    Scheduler.f_AddInstruction(new c_RInstruction(t_InstructionType::E_IT_MUL, 1, 2, 4));
+    Scheduler.f_AddInstruction(new c_RInstruction(t_InstructionType::E_IT_ADD, 8, 6, 2));
+    Scheduler.f_AddInstruction(new c_RInstruction(t_InstructionType::E_IT_MUL, 10, 1, 6));
+    Scheduler.f_AddInstruction(new c_RInstruction(t_InstructionType::E_IT_ADD, 6, 8, 2));
 
     while(Scheduler.m_CompletedInstructions < Scheduler.m_TotalInstructions){
         Scheduler.f_Cycle();
