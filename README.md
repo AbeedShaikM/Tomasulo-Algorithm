@@ -5,10 +5,8 @@ This repository contains a C++ implementation of the Tomasulo algorithm, a hardw
 ## Table of Contents
 
 - [Overview](#overview)
-- [Directory Structure](#directory-structure)
 - [Installation](#installation)
 - [Usage](#usage)
-- [License](#license)
 
 ## Overview
 
