@@ -5,7 +5,7 @@ This repository contains a C++ implementation of the Tomasulo algorithm, a hardw
 ## Table of Contents
 
 - [Overview](#overview)
-- [Installation and usage](#installation and usage)
+- [Usage](#Usage)
 
 ## Overview
 
@@ -20,7 +20,7 @@ The Tomasulo algorithm is used in modern CPUs to dynamically schedule instructio
 - **Reservation_station**: Contains the `c_ReservationStation` class for representing reservation stations.
 - **Scheduler**: Contains the `c_Scheduler` class for scheduling instructions and managing functional units.
 
-## Installation and usage
+## Usage
 
 To compile and run the program, you need to have `g++` installed. You can compile the program using the provided `Makefile`.
 
